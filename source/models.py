@@ -59,11 +59,11 @@ class AE(nn.Module):
             nn.ReLU(),
         )
         
-        for m in itertools.chain(self.encoder.modules(), self.decoder.modules()):
-            if isinstance(m, nn.Linear):
-                nn.init.uniform_(m.weight, 
-                                 a=-1/math.sqrt(m.in_features), 
-                                 b=1/math.sqrt(m.in_features))
+        # for m in itertools.chain(self.encoder.modules(), self.decoder.modules()):
+        #     if isinstance(m, nn.Linear):
+        #         nn.init.uniform_(m.weight, 
+        #                          a=-1/math.sqrt(m.in_features), 
+        #                          b=1/math.sqrt(m.in_features))
  
     def forward(self, x):
         encoded = self.encoder(x)
