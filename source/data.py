@@ -19,7 +19,7 @@ def get_train_test_dataloaders(root, dataset, batch_size=32, num_workers=4, drop
                                   drop_last=drop_last)
         
         test_dataset = USPS(root=root, train=False, transform=transform, download=True)
-        test_loader = DataLoader(test_dataset, batch_size=batch_size, 
+        test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False,
                                  num_workers=num_workers, drop_last=drop_last)
         
     else:
